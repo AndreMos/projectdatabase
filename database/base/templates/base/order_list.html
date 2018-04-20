@@ -1,0 +1,49 @@
+{% extends "base_generics.html" %}
+{% block content %}
+<title>Заказы</title>
+
+<body>
+  <h1> Список заказов</h1>
+  <a href="/base/order/create ">
+  <img src="/static/plus-sign.svg" alt="Добавить"style="width:42px;height:42px;border:0"/></a>
+      <table id="t01">
+
+      {% if order_list %}
+      <tr>
+         <th>Заказчик</th>
+         <th>Наименование</th>
+         <th>Тип прибора</th>
+         <th>Дата приема</th>
+         <th>Текущий статус</th>
+         <th colspan="3">Действия</th>
+        </tr>
+
+        {% for order in order_list %}
+          <tr>
+            <td>{{ order.id }}</td>
+            <td>{{ order.name }}</td>
+            <td>{{ order.type_of_device }}</td>
+            <td>{{ order.date_of_issue }}</td>
+            <td>{{ order.status }}</td>
+
+            <td class="pic"><a href="{{ order.get_absolute_url }}">
+<img src="/static/more.svg" alt="Подробности"style="width:42px;height:42px;border:0"/>
+
+</a></td>
+          <td class="pic"><a href="{{ order.get_absolute_url1 }}">
+<img src="/static/pencil.svg" alt="Изменение"style="width:42px;height:42px;border:0"/>
+
+</a></td>
+          <td class="pic"><a href="{{ order.get_absolute_url2 }}">
+<img src="/static/remove-sign.svg" alt="Удаление"style="width:42px;height:42px;border:0"/>
+
+</a></td>
+          </tr>
+        {% endfor %}
+
+      </table>
+      {% else %}
+        <p>There are no order in the library.</p>
+      {% endif %}
+  {% endblock %}
+</body>

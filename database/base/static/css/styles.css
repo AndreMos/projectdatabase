@@ -1,0 +1,12 @@
+
+table#t01, td {
+    border: 1px solid black;
+
+}
+table#t01 th {
+    background-color: black;
+    color: white;
+}
+.pic {
+  border-color: transparent;
+}

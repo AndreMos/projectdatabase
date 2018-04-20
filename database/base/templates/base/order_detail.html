@@ -1,0 +1,43 @@
+{% extends "base_generics.html" %}
+<body>
+
+  {% block content %}
+    <table>
+      <tr>
+         <th>Заказчик</th>
+         <th>Наименование</th>
+         <th>Тип прибора</th>
+         <th>Дата приема</th>
+         <th>Текущий статус</th>
+         <th>Акт неисправности</th>
+         <th>Внешний осмотр</th>
+         <th>Проверка работоспособности</th>
+         <th>Результаты диагностики</th>
+         <th>Проделанные работы</th>
+         <th>Примечание</th>
+         <th>Ответсвенный исполнитель</th>
+        </tr>
+        <tr>
+          <td>{{ order.id }}</td>
+          <td>{{ order.name }}</td>
+          <td>{{ order.type_of_device }}</td>
+          <td>{{ order.date_of_issue }}</td>
+          <td>{{ order.act}}</td>
+          <td>{{ order.outside_osmotr }}</td>
+          <td>{{ order.check_whether_is_working }}</td>
+          <td>{{ order.results_diag }}</td>
+          <td>{{ order.working_was_done }}</td>
+          <td>{{ order.note }}</td>
+          <td>{{ order.responsive_person }}</td>
+        </tr>
+
+
+
+
+
+
+
+
+
+  {% endblock %}
+</body>
